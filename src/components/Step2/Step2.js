@@ -1,8 +1,9 @@
 import React from 'react';
-import {Button} from "reactstrap";
+import {Label, Button, Input} from "reactstrap";
 import {useDispatch, useSelector} from "react-redux";
 import styled from 'styled-components';
 import {goToSteps, setActiveSteps} from "../../actions/workAction";
+import instance from "../../utils/axios";
 
 const InfoClient = styled.div`
   display: flex;
@@ -78,6 +79,15 @@ const Step2 = () => {
         dispath(goToSteps(activeClient.id, value))
     }, [ dispath]);
 
+    const [message, setMessage] = React.useState('');
+    const handleInstance = async () => {
+        await  instance.post('/send', {
+                id: "230637210",
+                message: message,
+                send: "1"
+            });
+    }
+
     return (
         <div style={{width: 'calc(100% - 357px)',
             backgroundColor: '#EDEFF3'}}>
@@ -92,13 +102,12 @@ const Step2 = () => {
 
                     </Top>
                 </LeftContainer>
-                <div>
-
-                </div>
             </TopContainer>
+            <Label>Введите сообщение</Label>
+            <Input type="text-area" value={message} onChange={e => setMessage(e.target.value)}/>
             <Bottom>
                 <CloseButton onClick={() => handleClick(7)}>Отказаться</CloseButton>
-                <ApproveButton onClick={() => handleClick(2)}>Отправить</ApproveButton>
+                <ApproveButton onClick={handleInstance}>Отправить</ApproveButton>
             </Bottom>
         </div>
     );

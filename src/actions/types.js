@@ -1,0 +1,9 @@
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
+export const CREATE_USER = 'CREATE_USER';
+export const SET_ACTIVE = 'SET_ACTIVE';
+export const SET_ACTIVE_STEPS = 'SET_ACTIVE_STEPS';
+export const QUERY = 'QUERY';
+export const SET_ACTIVE_CLIENT = 'SET_ACTIVE_CLIENT';
+export const GO_TO_STEPS = 'GO_TO_STEPS';
+export const NEW_VACANCY = 'NEW_VACANCY';

@@ -50,7 +50,7 @@ const User = () => {
     return (
         <ContainerName>
             <Name>{user}</Name>
-            <LogoUser />
+            <LogoUser id={'0'}/>
         </ContainerName>
     )
 };

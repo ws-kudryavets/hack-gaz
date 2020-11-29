@@ -2,7 +2,6 @@ import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import styled from 'styled-components';
 import {setActive} from "../../actions/workAction";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useHistory} from "react-router-dom";
 

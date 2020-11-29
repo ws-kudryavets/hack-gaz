@@ -1,0 +1,7 @@
+#!/bin/bash
+cd /root/sweet_dashboard_project
+echo aaa >> log0.txt &
+dashing start &
+python3 /root/BOT/gazprom_dashboard.py >> log4.txt &
+
+exit 0

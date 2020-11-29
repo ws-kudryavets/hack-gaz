@@ -3,7 +3,7 @@ import {Label, Button, Input} from "reactstrap";
 import {useDispatch, useSelector} from "react-redux";
 import styled from 'styled-components';
 import {goToSteps, setActiveSteps} from "../../actions/workAction";
-import instance from "../../utils/axios";
+import axios from 'axios';
 
 const InfoClient = styled.div`
   display: flex;
@@ -81,7 +81,7 @@ const Step2 = () => {
 
     const [message, setMessage] = React.useState('');
     const handleInstance = async () => {
-        await  instance.post('/send', {
+        await  axios.post('http://gpb2.hack48.ru:5000/send', {
                 id: "230637210",
                 message: message,
                 send: "1"
